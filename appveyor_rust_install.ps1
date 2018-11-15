@@ -38,6 +38,10 @@ if ($toolchain -ne "x86_64-pc-windows-msvc") {
 	echo "Setting default toolchain to ${toolchain}"
 
 	rustup default $toolchain
+	
+	echo "Removing `rust-mingw` component"
+
+	rustup component remove rust-mingw
 }
 
 echo "Installation of $channel Rust $target completed"
